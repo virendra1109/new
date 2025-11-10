@@ -1,0 +1,124 @@
+2025-11-11 00:40:08 | INFO     | ======================================================================
+2025-11-11 00:40:08 | INFO     | Log file: logs\magentic_run_20251111_004008.log
+2025-11-11 00:40:08 | INFO     | ======================================================================
+
+2025-11-11 00:40:12 | INFO     | Database connected: ep-icy-voice-a8cstquo-pooler.eastus2.azure.neon.tech/neondb?sslmode=require&channel_binding=require
+2025-11-11 00:40:12 | INFO     | 
+======================================================================
+2025-11-11 00:40:12 | INFO     | STARTING API - LOADING CONFIGURATION
+2025-11-11 00:40:12 | INFO     | ======================================================================
+2025-11-11 00:40:12 | INFO     | 
+1. Loading MCP Servers...
+2025-11-11 00:40:12 | INFO     | Loaded Command MCP server: slack
+2025-11-11 00:40:12 | INFO     | Loaded Command MCP server: hubspot
+2025-11-11 00:40:12 | INFO     | Loaded Command MCP server: zomato
+2025-11-11 00:40:12 | INFO     | Loaded HTTP MCP server: microsoft.docs.mcp -> https://learn.microsoft.com/api/mcp
+2025-11-11 00:40:12 | INFO     | Loaded Command MCP server: Neon
+2025-11-11 00:40:12 | INFO     | ✅ Total MCP servers loaded: 5
+2025-11-11 00:40:12 | INFO     | Loaded 5 MCP servers: ['slack', 'hubspot', 'zomato', 'microsoft.docs.mcp', 'Neon']
+2025-11-11 00:40:12 | INFO     | 
+2. Loading Code-Based Agents...
+2025-11-11 00:40:12 | INFO     | Loaded code-based agent: hubspot
+2025-11-11 00:40:12 | INFO     | Loaded code-based agent: slack
+2025-11-11 00:40:12 | INFO     | Loaded code-based agent: sample1
+2025-11-11 00:40:12 | INFO     | Loaded code-based agent: sample2
+2025-11-11 00:40:12 | INFO     | Total code-based agents: 4
+2025-11-11 00:40:12 | INFO     |   Loaded 4 code-based agents: ['hubspot', 'slack', 'sample1', 'sample2']
+2025-11-11 00:40:12 | INFO     | 
+3. Loading Database Agents...
+2025-11-11 00:40:17 | INFO     | Loaded 5 agents from database
+2025-11-11 00:40:17 | INFO     |   Loaded 5 database agents: ['agentmicrosoft', 'Zomato', 'sample1', 'slack', 'hubspot']
+2025-11-11 00:40:17 | INFO     | 
+4. Merging Agent Pools...
+2025-11-11 00:40:17 | INFO     | Added database agent: agentmicrosoft
+2025-11-11 00:40:17 | INFO     | Added database agent: Zomato
+2025-11-11 00:40:17 | INFO     | Total merged agents: 6 (code: 4, db: 5)
+2025-11-11 00:40:17 | INFO     |   Total agents available: 6
+2025-11-11 00:40:17 | INFO     | 
+======================================================================
+2025-11-11 00:40:17 | INFO     | STARTUP COMPLETE - READY TO ACCEPT REQUESTS
+2025-11-11 00:40:17 | INFO     | ======================================================================
+2025-11-11 00:40:17 | INFO     | MCP Servers: ['slack', 'hubspot', 'zomato', 'microsoft.docs.mcp', 'Neon']
+2025-11-11 00:40:17 | INFO     | Agents: ['hubspot', 'slack', 'sample1', 'sample2', 'agentmicrosoft', 'Zomato']
+2025-11-11 00:40:17 | INFO     | ======================================================================
+
+2025-11-11 00:40:52 | INFO     | 
+======================================================================
+2025-11-11 00:40:52 | INFO     | QUERY: Get all contacts from hubspot and post to slack all appcino channel
+2025-11-11 00:40:52 | INFO     | ======================================================================
+2025-11-11 00:40:54 | ERROR    | Query execution failed: Connection error.
+2025-11-11 00:40:54 | ERROR    | Full traceback:
+Traceback (most recent call last):
+  File "d:\Projects\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "d:\Projects\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 207, in handle_request
+    raise UnsupportedProtocol(
+httpcore.UnsupportedProtocol: Request URL is missing an 'http://' or 'https://' protocol.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\Projects\.venv\Lib\site-packages\openai\_base_client.py", line 982, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(value)
+  File "d:\Projects\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.UnsupportedProtocol: Request URL is missing an 'http://' or 'https://' protocol.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\approach2\api\routes.py", line 133, in execute_query
+    agent_indexer = AgentIndexer(all_agents)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\approach2\utils\agent_indexer.py", line 41, in __init__
+    self._build_and_save(index_path, metadata_path, agents_info)
+  File "D:\Projects\approach2\utils\agent_indexer.py", line 46, in _build_and_save
+    get_embedding(f"{name}: {desc}")
+  File "D:\Projects\approach2\utils\embeddings.py", line 14, in get_embedding
+    response = client.embeddings.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\mlflow\utils\autologging_utils\safety.py", line 483, in safe_patch_function
+    patch_function(call_original, *args, **kwargs)
+  File "d:\Projects\.venv\Lib\site-packages\mlflow\openai\autolog.py", line 241, in patched_call
+    raw_result = original(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\mlflow\utils\autologging_utils\safety.py", line 474, in call_original
+    return call_original_fn_with_event_logging(_original_fn, og_args, og_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\mlflow\utils\autologging_utils\safety.py", line 425, in call_original_fn_with_event_logging
+    original_fn_result = original_fn(*og_args, **og_kwargs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\mlflow\utils\autologging_utils\safety.py", line 471, in _original_fn
+    original_result = original(*_og_args, **_og_kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\openai\resources\embeddings.py", line 132, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\openai\_base_client.py", line 1014, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+
+2025-11-11 00:42:49 | INFO     | Shutting down API...

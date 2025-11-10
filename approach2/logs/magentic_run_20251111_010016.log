@@ -1,0 +1,153 @@
+2025-11-11 01:00:16 | INFO     | ======================================================================
+2025-11-11 01:00:16 | INFO     | Log file: logs\magentic_run_20251111_010016.log
+2025-11-11 01:00:16 | INFO     | ======================================================================
+
+2025-11-11 01:00:23 | INFO     | Database connected: ep-icy-voice-a8cstquo-pooler.eastus2.azure.neon.tech/neondb?sslmode=require&channel_binding=require
+2025-11-11 01:00:23 | INFO     | 
+======================================================================
+2025-11-11 01:00:23 | INFO     | STARTING API - LOADING CONFIGURATION
+2025-11-11 01:00:23 | INFO     | ======================================================================
+2025-11-11 01:00:23 | INFO     | 
+1. Loading MCP Servers...
+2025-11-11 01:00:23 | INFO     | Loaded Command MCP server: slack
+2025-11-11 01:00:23 | INFO     | Loaded Command MCP server: hubspot
+2025-11-11 01:00:23 | INFO     | Loaded Command MCP server: zomato
+2025-11-11 01:00:23 | INFO     | Loaded HTTP MCP server: microsoft.docs.mcp -> https://learn.microsoft.com/api/mcp
+2025-11-11 01:00:23 | INFO     | Loaded Command MCP server: Neon
+2025-11-11 01:00:23 | INFO     | ✅ Total MCP servers loaded: 5
+2025-11-11 01:00:23 | INFO     | Loaded 5 MCP servers: ['slack', 'hubspot', 'zomato', 'microsoft.docs.mcp', 'Neon']
+2025-11-11 01:00:23 | INFO     | 
+2. Loading Code-Based Agents...
+2025-11-11 01:00:23 | INFO     | Loaded code-based agent: hubspot
+2025-11-11 01:00:23 | INFO     | Loaded code-based agent: slack
+2025-11-11 01:00:23 | INFO     | Loaded code-based agent: sample1
+2025-11-11 01:00:23 | INFO     | Loaded code-based agent: sample2
+2025-11-11 01:00:23 | INFO     | Total code-based agents: 4
+2025-11-11 01:00:23 | INFO     |   Loaded 4 code-based agents: ['hubspot', 'slack', 'sample1', 'sample2']
+2025-11-11 01:00:23 | INFO     | 
+3. Loading Database Agents...
+2025-11-11 01:00:28 | INFO     | Loaded 5 agents from database
+2025-11-11 01:00:28 | INFO     |   Loaded 5 database agents: ['agentmicrosoft', 'Zomato', 'sample1', 'slack', 'hubspot']
+2025-11-11 01:00:28 | INFO     | 
+4. Merging Agent Pools...
+2025-11-11 01:00:28 | INFO     | Added database agent: agentmicrosoft
+2025-11-11 01:00:28 | INFO     | Added database agent: Zomato
+2025-11-11 01:00:28 | INFO     | Total merged agents: 6 (code: 4, db: 5)
+2025-11-11 01:00:28 | INFO     |   Total agents available: 6
+2025-11-11 01:00:28 | INFO     | 
+======================================================================
+2025-11-11 01:00:28 | INFO     | STARTUP COMPLETE - READY TO ACCEPT REQUESTS
+2025-11-11 01:00:28 | INFO     | ======================================================================
+2025-11-11 01:00:28 | INFO     | MCP Servers: ['slack', 'hubspot', 'zomato', 'microsoft.docs.mcp', 'Neon']
+2025-11-11 01:00:28 | INFO     | Agents: ['hubspot', 'slack', 'sample1', 'sample2', 'agentmicrosoft', 'Zomato']
+2025-11-11 01:00:28 | INFO     | ======================================================================
+
+2025-11-11 01:01:10 | INFO     | 
+======================================================================
+2025-11-11 01:01:10 | INFO     | QUERY: Get all the hubspot contacts and post to slack allappcino channel
+2025-11-11 01:01:10 | INFO     | ======================================================================
+2025-11-11 01:01:11 | INFO     | Indexed selection: slack, hubspot, Zomato
+2025-11-11 01:01:17 | INFO     | Initializing MCP for hubspot (type: command)...
+2025-11-11 01:01:17 | INFO     |   Created Stdio MCP tool for hubspot with command: npx
+2025-11-11 01:01:17 | INFO     | Initializing MCP for slack (type: command)...
+2025-11-11 01:01:17 | INFO     |   Created Stdio MCP tool for slack with command: npx
+2025-11-11 01:01:17 | ERROR    | Query execution failed: Failed to connect to the MCP server. Please check your configuration.
+2025-11-11 01:01:17 | ERROR    | Full traceback:
+Traceback (most recent call last):
+  File "d:\Projects\.venv\Lib\site-packages\mcp\os\win32\utilities.py", line 169, in create_windows_process
+    process = await anyio.open_process(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\anyio\_core\_subprocesses.py", line 190, in open_process
+    return await get_async_backend().open_process(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2588, in open_process
+    process = await asyncio.create_subprocess_exec(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\subprocess.py", line 222, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\base_events.py", line 1708, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\windows_events.py", line 399, in _make_subprocess_transport
+    transp = _WindowsSubprocessTransport(self, protocol, args, shell,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\base_subprocess.py", line 36, in __init__
+    self._start(args=args, shell=shell, stdin=stdin, stdout=stdout,
+  File "C:\Program Files\Python312\Lib\asyncio\windows_events.py", line 873, in _start
+    self._proc = windows_utils.Popen(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\windows_utils.py", line 153, in __init__
+    super().__init__(args, stdin=stdin_rfd, stdout=stdout_wfd,
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 193] %1 is not a valid Win32 application
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Projects\.venv\Lib\site-packages\agent_framework\_mcp.py", line 318, in connect
+    transport = await self._exit_stack.enter_async_context(self.get_mcp_client())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 647, in enter_async_context
+    result = await _enter(cm)
+             ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 204, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\mcp\client\stdio\__init__.py", line 124, in stdio_client
+    process = await _create_platform_compatible_process(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\mcp\client\stdio\__init__.py", line 249, in _create_platform_compatible_process
+    process = await create_windows_process(command, args, env, errlog, cwd)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\mcp\os\win32\utilities.py", line 184, in create_windows_process
+    process = await anyio.open_process(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\anyio\_core\_subprocesses.py", line 190, in open_process
+    return await get_async_backend().open_process(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2588, in open_process
+    process = await asyncio.create_subprocess_exec(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\subprocess.py", line 222, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\base_events.py", line 1708, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\windows_events.py", line 399, in _make_subprocess_transport
+    transp = _WindowsSubprocessTransport(self, protocol, args, shell,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\base_subprocess.py", line 36, in __init__
+    self._start(args=args, shell=shell, stdin=stdin, stdout=stdout,
+  File "C:\Program Files\Python312\Lib\asyncio\windows_events.py", line 873, in _start
+    self._proc = windows_utils.Popen(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\asyncio\windows_utils.py", line 153, in __init__
+    super().__init__(args, stdin=stdin_rfd, stdout=stdout_wfd,
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 193] %1 is not a valid Win32 application
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\approach2\api\routes.py", line 181, in execute_query
+    await stack.enter_async_context(mcp_tool)
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 647, in enter_async_context
+    result = await _enter(cm)
+             ^^^^^^^^^^^^^^^^
+  File "d:\Projects\.venv\Lib\site-packages\agent_framework\_mcp.py", line 634, in __aenter__
+    await self.connect()
+  File "d:\Projects\.venv\Lib\site-packages\agent_framework\_mcp.py", line 321, in connect
+    raise ToolException(
+agent_framework.exceptions.ToolException: Failed to connect to the MCP server. Please check your configuration.
+
+2025-11-11 01:03:48 | INFO     | Shutting down API...

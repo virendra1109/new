@@ -1,0 +1,41 @@
+2025-11-11 01:51:10 | INFO     | ======================================================================
+2025-11-11 01:51:10 | INFO     | Log file: logs\magentic_run_20251111_015110.log
+2025-11-11 01:51:10 | INFO     | ======================================================================
+
+2025-11-11 01:51:10 | INFO     | Database connected: ep-icy-voice-a8cstquo-pooler.eastus2.azure.neon.tech/neondb?sslmode=require&channel_binding=require
+2025-11-11 01:51:11 | INFO     | 
+======================================================================
+2025-11-11 01:51:11 | INFO     | INITIALIZING APPROACH2
+2025-11-11 01:51:11 | INFO     | ======================================================================
+2025-11-11 01:51:11 | INFO     | 
+1. Loading MCP Servers...
+2025-11-11 01:51:11 | INFO     | Loaded Command MCP server: slack
+2025-11-11 01:51:11 | INFO     | Loaded Command MCP server: hubspot
+2025-11-11 01:51:11 | INFO     | Loaded Command MCP server: zomato
+2025-11-11 01:51:11 | INFO     | Loaded HTTP MCP server: microsoft.docs.mcp -> https://learn.microsoft.com/api/mcp
+2025-11-11 01:51:11 | INFO     | Loaded Command MCP server: Neon
+2025-11-11 01:51:11 | INFO     | ✅ Total MCP servers loaded: 5
+2025-11-11 01:51:11 | INFO     | Loaded 5 MCP servers: ['slack', 'hubspot', 'zomato', 'microsoft.docs.mcp', 'Neon']
+2025-11-11 01:51:11 | INFO     | 
+2. Loading Code-Based Agents...
+2025-11-11 01:51:11 | INFO     | Loaded code-based agent: hubspot
+2025-11-11 01:51:11 | INFO     | Loaded code-based agent: slack
+2025-11-11 01:51:11 | INFO     | Loaded code-based agent: sample1
+2025-11-11 01:51:11 | INFO     | Loaded code-based agent: sample2
+2025-11-11 01:51:11 | INFO     | Total code-based agents: 4
+2025-11-11 01:51:11 | INFO     |   Loaded 4 code-based agents: ['hubspot', 'slack', 'sample1', 'sample2']
+2025-11-11 01:51:11 | INFO     | 
+3. Loading Database Agents...
+2025-11-11 01:51:16 | INFO     | Loaded 5 agents from database
+2025-11-11 01:51:16 | INFO     |   Loaded 5 database agents: ['agentmicrosoft', 'Zomato', 'sample1', 'slack', 'hubspot']
+2025-11-11 01:51:16 | INFO     | 
+4. Merging Agent Pools...
+2025-11-11 01:51:16 | INFO     | Added database agent: agentmicrosoft
+2025-11-11 01:51:16 | INFO     | Added database agent: Zomato
+2025-11-11 01:51:16 | INFO     | Total merged agents: 6 (code: 4, db: 5)
+2025-11-11 01:51:16 | INFO     |   Total agents available: 6
+2025-11-11 01:51:16 | INFO     | 
+======================================================================
+2025-11-11 01:51:16 | INFO     | APPROACH2 INITIALIZED
+2025-11-11 01:51:16 | INFO     | ======================================================================
+
