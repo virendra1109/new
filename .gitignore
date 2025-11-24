@@ -1,3 +1,12 @@
 .vscode/mcp.json
 approach1/config/*.py
 approach2/config/*.py
+
+cache/
+*.log
+
+__pycache__/
+*.pyc
+
+approach1.zip
+approach2.zip
